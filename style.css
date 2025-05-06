@@ -1,0 +1,771 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@500&display=swap');
+
+
+:root {
+  --primary-color: #FF0000;  /* Red */
+  --accent-color: #FFFFFF;   /* White */
+  --bg-color: #121212;       /* Dark Background */
+  --card-bg: #1f1f2f;        /* Card Background */
+  --text-color: #f0f0f0;     /* Text Color */
+  --glow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color);
+  /* Glow effect */
+  --glow-hover: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+  /* Glow effect on hover */
+  --glow-active: 0 0 20px var(--primary-color), 0 0 40px var(--primary-color);
+  /* Glow effect on active */
+  --glow-focus: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color);
+  /* Glow effect on focus */
+  --glow-focus-hover: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+  /* Glow effect on focus and hover */
+  --glow-focus-active: 0 0 20px var(--primary-color), 0 0 40px var(--primary-color);
+  /* Glow effect on focus and active */
+  --glow-focus-active-hover: 0 0 30px var(--primary-color), 0 0 50px var(--primary-color);
+  /* Glow effect on focus, active and hover */
+  --glow-focus-active-hover-2: 0 0 40px var(--primary-color), 0 0 60px var(--primary-color);
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+  text-decoration: none;
+  list-style: none;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background-color: var(--bg-color);
+  background-image: radial-gradient(#1a1a1a 1px, transparent 1px);
+  background-size: 20px 20px;
+  color: var(--text-color);
+  line-height: 1.6;
+  background-attachment: fixed;
+  background-size: 600% 600%;
+  animation: gradientBackground 15s ease infinite;
+  filter: brightness(0.9);
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */  
+
+}
+
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: 0.3s ease;
+  text-shadow: var(--glow);
+}
+
+a:hover {
+  color: var(--accent-color);
+
+  text-shadow: var(--glow-hover);
+  /* Glow effect on hover */
+  animation: glow 1.5s infinite alternate; /* Animation for glow effect */
+}
+
+/* ------------------ HEADER ------------------ */
+header.hero {
+  background: linear-gradient(to bottom, #111, #222);
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);  /* Red glow */
+  border-radius: 12px;  /* Rounded corners */
+  margin: 20px auto;  /* Center the header */
+  max-width: 1200px;  /* Limit the width of the header */
+  backdrop-filter: blur(10px);  /* Blur effect for the background */
+  -webkit-backdrop-filter: blur(10px);  /* For Safari */
+  border: 1px solid rgba(255, 255, 255, 0.1);  /* Light border */
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5), 0 0 40px rgba(255, 0, 0, 0.3); /* Red glow */
+  animation: glow 1.5s infinite alternate; /* Animation for glow effect */
+
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 5px var(--primary-color);
+    }
+    100% {
+      box-shadow: 0 0 20px var(--primary-color);
+    }
+  }
+
+  
+  
+}
+
+header.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    rgba(255, 255, 255, 0.02) 2px,
+    rgba(255, 255, 255, 0.02) 4px
+  ),
+  repeating-linear-gradient(
+    to right,
+    transparent 0px,
+    transparent 2px,
+    rgba(255, 255, 255, 0.02) 2px,
+    rgba(255, 255, 255, 0.02) 4px
+  );
+  pointer-events: none;
+}
+
+header.hero h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  text-shadow: var(--glow);
+}
+
+header.hero p {
+  color: var(--accent-color);
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+nav {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between nav items */
+  padding: 10px 0; /* Padding around the nav items */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Red glow */
+  animation: glow 1.5s infinite alternate; /* Animation for glow effect */
+  backdrop-filter: blur(5px); /* Blur effect for the background */
+  -webkit-backdrop-filter: blur(5px); /* For Safari */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Light border */
+  margin: 20px auto; /* Center the nav bar */
+  max-width: 1200px; /* Limit the width of the nav bar */
+  padding: 10px 20px; /* Padding around the nav bar */
+  box-sizing: border-box; /* Include padding in width calculation */
+  z-index: 2; /* Ensure nav is above other elements */
+  position: relative; /* Position relative for z-index to work */
+  animation: glow 1.5s infinite alternate; /* Animation for glow effect */
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 5px var(--primary-color);
+    }
+    100% {
+      box-shadow: 0 0 20px var(--primary-color);
+    }
+  }
+  
+}
+
+nav a {
+  display: inline-block;
+  margin: 0 12px;
+  position: relative;
+  font-weight: bold;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-color);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+  
+  animation: glow 1.5s infinite alternate;
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 5px var(--primary-color);
+    }
+    100% {
+      box-shadow: 0 0 20px var(--primary-color);
+    }
+  }
+}
+
+/* ------------------ CONTAINER ------------------ */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* Red glow */
+  animation: glow 1.5s infinite alternate; /* Animation for glow effect */
+  backdrop-filter: blur(5px); /* Blur effect for the background */
+  -webkit-backdrop-filter: blur(5px); /* For Safari */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Light border */
+  margin: 20px auto; /* Center the container */
+  max-width: 1200px; /* Limit the width of the container */
+  padding: 20px 40px; /* Padding around the container */
+  box-sizing: border-box; /* Include padding in width calculation */
+  z-index: 2; /* Ensure container is above other elements */
+  position: relative; /* Position relative for z-index to work */
+  animation: glow 1.5s infinite alternate; /* Animation for glow effect */
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 5px var(--primary-color);
+    }
+    100% {
+      box-shadow: 0 0 20px var(--primary-color);
+    }
+  }
+}
+
+/* ------------------ SECTIONS ------------------ */
+h2 {
+  font-size: 1.8rem;
+  color: var(--accent-color);
+  border-left: 4px solid var(--primary-color);
+  padding-left: 12px;
+  margin-bottom: 20px;
+  text-shadow: var(--glow);
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  animation: fadeInUp 1s ease-in-out forwards;
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.5s ease-in-out; /* Smooth transition for visibility */
+  animation: fadeInUp 1s ease-in-out forwards; /* Fade in effect */
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  animation-fill-mode: forwards; /* Keep the final state of the animation */
+  animation-name: fadeInUp; /* Name of the animation */
+  animation-duration: 1s; /* Duration of the animation */
+  animation-timing-function: ease-in-out; /* Timing function for the animation */
+  animation-delay: 0.5s; /* Delay before the animation starts */
+  animation-fill-mode: forwards; /* Keep the final state of the animation */
+  animation: fadeInUp 1s ease-in-out forwards; /* Fade in effect */
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  animation-fill-mode: forwards; /* Keep the final state of the animation */
+  animation-name: fadeInUp; /* Name of the animation */
+  animation-duration: 1s; /* Duration of the animation */
+  animation-timing-function: ease-in-out; /* Timing function for the animation */
+  animation-delay: 0.5s; /* Delay before the animation starts */
+  animation-fill-mode: forwards; /* Keep the final state of the animation */
+  animation: fadeInUp 1s ease-in-out forwards; /* Fade in effect */
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  animation-fill-mode: forwards; /* Keep the final state of the animation */
+  animation-name: fadeInUp; /* Name of the animation */
+  animation-duration: 1s; /* Duration of the animation */
+  animation-timing-function: ease-in-out; /* Timing function for the animation */
+  animation-delay: 0.5s; /* Delay before the animation starts */
+  animation-fill-mode: forwards; /* Keep the final state of the animation */
+  animation: fadeInUp 1s ease-in-out forwards; /* Fade in effect */
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  animation-fill-mode: forwards; /* Keep the final state of the animation */
+  animation-name: fadeInUp; /* Name of the animation */
+  animation-duration: 1s; /* Duration of the animation */
+  animation-timing-function: ease-in-out; /* Timing function for the animation */
+  animation-delay: 0.5s; /* Delay before the animation starts */
+  animation-fill-mode: forwards; /* Keep the final state of the animation */  
+}
+
+section p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: var(--text-color);
+  line-height: 1.6;
+  text-align: justify; /* Justify text for better readability */
+  animation: fadeInUp 1s ease-in-out forwards; /* Fade in effect */
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.5s ease-in-out; /* Smooth transition for visibility */
+  animation: fadeInUp 1s ease-in-out forwards; /* Fade in effect */
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  animation-fill-mode: forwards; /* Keep the final state of the animation */
+  opacity: 0;
+
+
+
+
+
+
+
+  transition: opacity 0.5s ease-in-out; /* Smooth transition for visibility */
+}
+
+/* ------------------ PROJECTS ------------------ */
+.project-card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  padding: 20px;
+  border: 2px solid var(--primary-color);
+  border-radius: 12px;
+  margin: 20px;
+  width: 100%;
+  max-width: 600px; /* Limit the width of the card */
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 30px;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 1s ease-in-out forwards; /* Fade in effect */
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.5s ease-in-out; /* Smooth transition for visibility */
+
+}
+
+.project-card:hover {
+  transform: scale(1.03) rotateX(2deg);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+  animation: glow 1.5s infinite alternate; /* Animation for glow effect */
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 5px var(--primary-color);
+    }
+    100% {
+      box-shadow: 0 0 20px var(--primary-color);
+    }
+  }
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  animation-fill-mode: forwards; /* Keep the final state of the animation */
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.5s ease-in-out; /* Smooth transition for visibility */
+  animation: fadeInUp 1s ease-in-out forwards; /* Fade in effect */
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  animation-fill-mode: forwards; /* Keep the final state of the animation */
+  opacity: 0; /* Start hidden */
+
+}
+
+.project-card img {
+  width: 100%;
+  max-width: 200px; /* Limit the width of the image */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 20px; /* Space between image and text */
+  flex-shrink: 0; /* Prevent image from shrinking */
+  object-fit: cover; /* Cover the entire area */
+  object-position: center; /* Center the image */
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+  border-radius: 12px; /* Rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  animation: fadeInUp 1s ease-in-out forwards; /* Fade in effect */
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.5s ease-in-out; /* Smooth transition for visibility */  
+  opacity: 0; /* Start hidden */
+  animation-fill-mode: forwards; /* Keep the final state of the animation */
+  opacity: 0; /* Start hidden */
+
+}
+
+.project-info {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  color: var(--text-color);
+  animation: fadeInUp 1s ease-in-out forwards; /* Fade in effect */
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.5s ease-in-out; /* Smooth transition for visibility */
+  animation: fadeInUp 1s ease-in-out forwards; /* Fade in effect */
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  animation-fill-mode: forwards; /* Keep the final state of the animation */
+  opacity: 0; /* Start hidden */
+}
+
+.project-info h3 {
+  margin: 0;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  text-shadow: var(--glow);
+  font-family: 'Press Start 2P', cursive;
+  animation: fadeInUp 1s ease-in-out forwards; /* Fade in effect */
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.5s ease-in-out; /* Smooth transition for visibility */
+  animation: fadeInUp 1s ease-in-out forwards; /* Fade in effect */
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  animation-fill-mode: forwards; /* Keep the final state of the animation */
+  opacity: 0; /* Start hidden */
+
+}
+
+.project-info p {
+
+  color: #ccc;
+  margin: 10px 0;
+  font-size: 1rem;
+  line-height: 1.4;
+  animation: fadeInUp 1s ease-in-out forwards; /* Fade in effect */
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.5s ease-in-out; /* Smooth transition for visibility */
+  animation: fadeInUp 1s ease-in-out forwards; /* Fade in effect */
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  animation-fill-mode: forwards; /* Keep the final state of the animation */
+  opacity: 0; /* Start hidden */
+
+}
+
+/* ------------------ BUTTON ------------------ */
+.play-button {
+  display: inline-block;
+  margin: 20px auto; /* Center the button */
+  text-align: center;
+  padding: 12px 24px;
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+  border: none;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+  /* Red glow */
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  /* Smooth transition for hover effect */
+  animation: fadeInUp 1s ease-in-out forwards; /* Fade in effect */
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.5s ease-in-out; /* Smooth transition for visibility */
+}
+
+.play-button:hover {
+  background: var(--accent-color);
+  color: #000;
+  box-shadow: 0 0 12px var(--accent-color), 0 0 24px var(--accent-color);
+  transform: translateY(-2px);
+  text-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color);
+  animation: glow 1.5s infinite alternate; /* Animation for glow effect */
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 5px var(--primary-color);
+    }
+    100% {
+      box-shadow: 0 0 20px var(--primary-color);
+    }
+  }
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  animation: glow 1.5s infinite alternate; /* Animation for glow effect */
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 5px var(--primary-color);
+    }
+    100% {
+      box-shadow: 0 0 20px var(--primary-color);
+    }
+  }
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  animation-fill-mode: forwards; /* Keep the final state of the animation */
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out forwards; /* Fade in effect */ 
+}
+
+/* ------------------ FOOTER ------------------ */
+footer {
+  text-align: center;
+  padding: 25px;
+  background-color: #0e0e0e;
+  font-size: 0.9rem;
+  color: #888;
+  border-top: 2px solid var(--primary-color);
+  margin-top: 20px;
+  box-shadow: 0 -2px 10px rgba(255, 0, 0, 0.5); /* Red glow */
+  animation: glow 1.5s infinite alternate; /* Animation for glow effect */
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 5px var(--primary-color);
+    }
+    100% {
+      box-shadow: 0 0 20px var(--primary-color);
+    }
+  }
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  animation: glow 1.5s infinite alternate; /* Animation for glow effect */  
+}
+
+/* ------------------ SMALL HEADER ------------------ */
+.hero.small {
+  padding: 40px 20px;
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 5px var(--primary-color);
+    }
+    100% {
+      box-shadow: 0 0 20px var(--primary-color);
+    }
+  }
+  animation: glow 1.5s infinite alternate; /* Animation for glow effect */
+}
+
+.hero.small h1 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  text-shadow: var(--glow);
+  font-family: 'Press Start 2P', cursive;
+  animation: fadeInUp 1s ease-in-out forwards; /* Fade in effect */
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  
+  animation: glow 1.5s infinite alternate; /* Animation for glow effect */
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 5px var(--primary-color);
+    }
+    100% {
+      box-shadow: 0 0 20px var(--primary-color);
+    }
+  }
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  animation-fill-mode: forwards; /* Keep the final state of the animation */
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.5s ease-in-out; /* Smooth transition for visibility */
+  animation: fadeInUp 1s ease-in-out forwards; /* Fade in effect */
+}
+
+/* Add this to your existing CSS */
+
+/* ICON STYLING */
+nav a i {
+  margin-right: 8px;
+  font-size: 1.2rem;
+  vertical-align: middle;
+  transition: 0.3s ease;
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.5s ease-in-out; /* Smooth transition for visibility */
+  animation: fadeInUp 1s ease-in-out forwards; /* Fade in effect */
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  animation-fill-mode: forwards; /* Keep the final state of the animation */
+  opacity: 0; /* Start hidden */
+}
+
+nav a:hover i {
+  transform: scale(1.2);
+}
+
+/* ------------------ BUTTON ICONS ------------------ */
+.play-button i {
+  margin-right: 8px;
+  font-size: 1.1rem;
+  vertical-align: middle;
+  transition: 0.3s ease;
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.5s ease-in-out; /* Smooth transition for visibility */
+  animation: fadeInUp 1s ease-in-out forwards; /* Fade in effect */
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  animation-fill-mode: forwards; /* Keep the final state of the animation */
+}
+
+.play-button:hover i {
+  transform: scale(1.1);
+  opacity: 0; /* Start hidden */
+  animation: fadeInUp 1s ease-in-out forwards; /* Fade in effect */
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  animation-fill-mode: forwards; /* Keep the final state of the animation */
+}
+
+.pace-logo {
+  width: 180px; /* Adjust size as needed */
+  max-width: 100%;
+  display: block; /* Makes the image a block element */
+  margin-left: auto; /* Centers horizontally */
+  margin-right: auto; /* Centers horizontally */
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.pace-logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.3));
+  animation: glow 1.5s infinite alternate; /* Animation for glow effect */
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 5px var(--primary-color);
+    }
+    100% {
+      box-shadow: 0 0 20px var(--primary-color);
+    }
+  }
+}
+/* === Logo Wrapper === */ 
+.logo-wrapper {
+  background-color: white;
+  padding: 1rem;
+  /* Padding around the logo */
+  border: 2px solid var(--primary-color);
+  
+  /* Red border */
+  border-radius: 12px;
+  /* Rounded corners */
+  box-sizing: border-box;
+  /* Include padding and border in element's total width and height */
+  width: 100%;
+  /* Full width of the parent container */
+  max-width: 300px; /* Limit the width of the logo wrapper */
+  /* Limit the width of the logo wrapper */
+  height: auto; /* Maintain aspect ratio */
+  /* Maintain aspect ratio */
+  margin: 20px auto; /* Center the logo wrapper */
+  display: inline-block; /* Changed to inline-block */
+}
+
+.game-image {
+  width: 100%;
+  max-width: 200px; /* Limit the width of the image */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 20px; /* Space between image and text */
+  flex-shrink: 0; /* Prevent image from shrinking */
+  object-fit: cover; /* Cover the entire area */
+  object-position: center; /* Center the image */
+  border: 2px solid var(--primary-color); /* Red border */
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.2); /* Red glow */
+  border-radius: 12px; /* Rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Smooth transition for hover effect */
+}
+.game-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3); /* Red glow on hover */
+  animation: glow 1.5s infinite alternate; /* Animation for glow effect */
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 5px var(--primary-color);
+    }
+    100% {
+      box-shadow: 0 0 20px var(--primary-color);
+    }
+  }
+}
+/* === Program Logo === */
+.program-logo {
+  width: 100%;
+  max-width: 200px; /* Limit the width of the image */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 20px; /* Space between image and text */
+  flex-shrink: 0; /* Prevent image from shrinking */
+  object-fit: cover; /* Cover the entire area */
+  object-position: center; /* Center the image */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* ------------------ GLOW EFFECT ------------------ */ 
+/* Add glow effect to main section */
+main {
+  padding: 20px;
+  max-width: 1200px; /* Limit the width of the main section */
+  margin: 0 auto; /* Center the main section */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* Red glow */
+  animation: glow 1.5s infinite alternate; /* Animation for glow effect */
+  backdrop-filter: blur(5px); /* Blur effect for the background */
+  -webkit-backdrop-filter: blur(5px); /* For Safari */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Light border */
+}
+
+
+  
+
+main section h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+}
+
+main p {
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section {
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+section.visible {
+  opacity: 1;
+  animation: fadeInUp 1s ease-in-out forwards; /* Fade in effect */
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  animation-fill-mode: forwards; /* Keep the final state of the animation */
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.5s ease-in-out; /* Smooth transition for visibility */
+  animation: fadeInUp 1s ease-in-out forwards; /* Fade in effect */
+  animation-delay: 0.5s; /* Add delay for a staggered effect */
+  animation-fill-mode: forwards; /* Keep the final state of the animation */
+}
+/* Flash overlay */
+.screen-flash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  opacity: 0.8;
+  z-index: 9999;
+  animation: flashOut 0.5s ease-out forwards;
+}
+
+@keyframes flashOut {
+  to {
+    opacity: 0;
+  }
+}

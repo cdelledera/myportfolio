@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Christian Dell'Edera-Personal Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="hero">
+    <h1>Christian Dell'Edera</h1>
+    <p>Student at Pace University Computer Science Major</p>
+    <p>Game Developer | Actor</p>
+    <p>Brooklyn, NY</p>
+    <p>Welcome to my portfolio! Here, you can explore my journey in game development and see the projects I've been working on.</p>
+    <nav>
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="projects.html"><i class="fas fa-gamepad"></i> Projects</a>
+        <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+      
+  </header>
+
+  <main class="container">
+
+    <!-- Intro -->
+    <section>
+      <h2>Welcome!</h2>
+      <p>
+        Hi! I’m <strong>Christian Dell'Edera</strong> — an aspiring game developer, a computer science student, and a huge fan of gaming. I am hoping to create immersive experiences that blend storytelling, art, and technology. Alongside my passion for game development, I continue to work professionally as an actor, bringing characters to life on stage and screen. 
+          </p>
+    </section>
+  
+    <!-- Background -->
+    <section>
+      <h2>My Background</h2>
+      <div class="logo-wrapper">
+        <img src="images/pace-logo.png" alt="Pace University Logo" class="pace-logo" />
+      </div>
+      <p>
+        I’m a sophomore at <strong>Pace University</strong>, majoring in <strong>Computer Science</strong> with a minor in <strong>Game Development</strong>. I grew up in <strong>Brooklyn, New York</strong>, and before diving into code and game engines, I came from the world of <strong>performing arts</strong>.
+      </p>
+      <p>
+        As an actor, I’ve always loved character, emotion, and stagecraft — and now I’m applying that same creative energy to game development. I’m fascinated by how games can tell stories, create worlds, and connect people. I believe that the best games are those that resonate with players on a personal level, and I strive to create experiences that do just that.
+      </p>
+    </section>
+  
+    <!-- Gaming Inspiration -->
+    <section>
+      <h2>Gaming Inspiration</h2>
+      <p>
+        I grew up with the <strong>GameCube</strong> and <strong>Wii</strong>, and games like <strong>Super Mario Galaxy</strong> had a huge impact on me. Over time, I discovered my love for deeper narratives and unique mechanics in titles like <strong>Persona 5</strong>, <strong>Xenoblade Chronicles</strong>, and <strong>Final Fantasy VII Remake & Rebirth</strong>. These games opened my eyes to the potential of interactive storytelling and the emotional connections they can create. 
+      </p>
+      <img src="images/SuperMarioGalaxy.jpg" alt="Super Mario Galaxy" class="game-image" />
+      <img src="images/persona_5_cover_art.png" alt="Persona 5" class="game-image" />
+      <img src="images/Xenoblade_box_artwork.png" alt="Xenoblade Chronicles" class="game-image" />
+      <img src="images/final-fantasy-vii-rebirth-okladka-gra-pc-muve.jpg" alt="Final Fantasy VII" class="game-image"/>
+      <p>
+        Those games shaped how I see interactive media — not just as entertainment, but as a powerful form of art and connection.
+      </p>
+    </section>
+  
+    <!-- Game Dev Journey -->
+    <section>
+      <h2>My Experience in Game Development/Coding</h2>
+      <p>
+        I started building games in <strong>Unity</strong> during my Game Dev courses at Pace. Every project has been a hands-on opportunity to think like a developer: solving design problems, building mechanics, and refining ideas.
+      </p>
+      <p>
+       I am also learning other programming languages in my other classes like <strong>Python</strong> and <strong>HTML</strong> and <strong>CSS</strong>. (I even made this website using HTML and CSS!) I’m excited to keep expanding my skills and exploring new technologies in the game development world.
+      </p>
+      <div class="logo-wrapper">
+        <img src="images/unity-logo.png" alt="Unity Logo" class="program-logo" />
+        <img src="images/Python-logo-notext.svg.png" alt="python logo" class="program-logo" />
+        <img src="images/html-css-js-logos.png" alt="HTML and CSS Logo" class="program-logo" />
+      </div>
+    </section>
+  
+    <!-- Projects Preview -->
+    <section>
+      <h2>Explore My Work</h2>
+      <p>
+        The games I’ve made so far are part of my coursework — they are my first ever projects in game development. I’m excited to keep expanding my skills and exploring new technologies in the game development world. Check out the <a href="projects.html">Projects</a> page to see what I’ve built. There are more games that I will surely be adding to the page in the future!
+      </p>
+      <p>
+        Got feedback, ideas, or just want to talk games? Reach out through the <a href="contact.html">Contact</a> page — I’d love to connect! 
+      </p>
+    </section>
+  
+  </main>
+  
+
+  <footer>
+    <p>&copy; 2025 Christian Dell'Edera</p>
+  </footer>
+  <script src="script.js"></script>
+  <script src="script.js"></script><!--  <script src="script.js"></script>  -->
+  <script>
+    const konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+    let konamiIndex = 0;
+  
+    window.addEventListener('keydown', (e) => {
+      if (e.keyCode === konamiCode[konamiIndex]) {
+        konamiIndex++;
+        if (konamiIndex === konamiCode.length) {
+          triggerKonamiEasterEgg();
+          konamiIndex = 0;
+        }
+      } else {
+        konamiIndex = 0;
+      }
+    });
+  
+    function triggerKonamiEasterEgg() {
+      document.body.classList.add("konami-mode");
+  
+      // Flash overlay
+      const flash = document.createElement("div");
+      flash.className = "screen-flash";
+      document.body.appendChild(flash);
+      setTimeout(() => {
+        flash.remove();
+      }, 500);
+    }    
+  </script>
+  
+</body>
+</html>
